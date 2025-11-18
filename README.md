@@ -33,3 +33,12 @@ pip install -r requirements.txt
 cp .env.example .env
 python manage.py migrate
 python manage.py runserver 8000
+
+
+**Frontend**
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+# open http://localhost:5173
