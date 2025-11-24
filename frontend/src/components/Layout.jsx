@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PostCreate from "./PostCreate"; // Import PostCreate component
-import NotificationsBadge from "./components/NotificationsBadge";
+import NotificationsBadge from "./NotificationsBadge";
 
 export default function Layout({ children, user, onLogout }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
