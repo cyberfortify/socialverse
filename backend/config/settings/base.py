@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "apps.accounts",
     "apps.posts",
+    "apps.messaging",
 ]
 
 MIDDLEWARE = [

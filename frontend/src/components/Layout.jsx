@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PostCreate from "./PostCreate"; // Import PostCreate component
+import NotificationsBadge from "./components/NotificationsBadge";
 
 export default function Layout({ children, user, onLogout }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -105,14 +106,7 @@ export default function Layout({ children, user, onLogout }) {
                   <span>Notifications</span>
                 </Link>
 
-                <Link 
-                  to="/profile" 
-                  className={navItemClass("/profile")}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="text-lg">👤</span>
-                  <span>Profile</span>
-                </Link>
+                
 
                 {/* Create Post Button in Sidebar */}
                 <button
@@ -122,6 +116,16 @@ export default function Layout({ children, user, onLogout }) {
                   <span className="text-lg">✏️</span>
                   <span>Create Post</span>
                 </button>
+
+
+                <Link 
+                  to="/profile" 
+                  className={navItemClass("/profile")}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="text-lg">👤</span>
+                  <span>Profile</span>
+                </Link>
               </>
             ) : (
               <>
@@ -229,6 +233,7 @@ export default function Layout({ children, user, onLogout }) {
             
             {user && (
               <div className="flex items-center space-x-4">
+                <NotificationsBadge />
                 {/* Create Post Button in Mobile Top Bar */}
                 <button
                   onClick={() => setCreateModalOpen(true)}
